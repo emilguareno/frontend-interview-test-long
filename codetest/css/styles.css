@@ -94,10 +94,36 @@ padding:0 5px;
 -moz-border-radius: 5px;
 border-radius: 5px;
 }
-div.post {
-background: lightgrey;
-margin: 20px 0;
+
+
+/*****   Modifications   ******/
+
+.user {
+color: #0279C9;
+font-weight: bold;
+margin-bottom: 5px;
 }
-textarea.post-comment {
-width: 100%;
+
+.user-image {
+float: left;
+padding-right: 15px;
+}
+
+p.post-content{
+	margin: 0 0 5px 0;  /*overrides initial top-bottom margins*/
+}
+
+.user-content {
+float: right;
+width: 415px;
+margin-bottom: 25px;
+}
+
+.comment p.post-content {
+margin-left: 28px;
+}
+
+.comments-box {
+background-color: #ededed;
+padding: 17px 7px;
 }
