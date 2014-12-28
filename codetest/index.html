@@ -27,7 +27,7 @@
 
 	<div id="posts" ng-controller="getPostController">
 	<h1>Updates</h1>
-	<div class="post" ng-repeat="post in postObj">
+	<div class="post cf" ng-repeat="post in postObj">
 		<div class="user-image" ng-repeat="user in users | filter:{'id': post.userId}:true">
 		<img src="{{user.pic}}" ng-class="user-image" alt="{{user.username}}">
 		</div>
@@ -37,20 +37,17 @@
 			<div class="user" ng-repeat="user in users | filter:{'id': post.userId}:true">
 				{{user.username}}
 			</div><!-- user -->
-			<p>{{post.content}}</p>
-			<div class="comment" ng-repeat="comment in post.comments">
-			<div class="user" ng-repeat="user in users | filter:{'id': comment.userId}:true">
-				<img src="{{user.pic}}" width="25" height="25" alt="{{user.username}}">
-				{{user.username}}
-			</div><!-- user -->
-				<p>{{comment.content}}</p>
-			</div><!-- comment -->
-
+			<p class="post-content">{{post.content}}</p>
+			<div class="comments-box">
+				<div class="comment" ng-repeat="comment in post.comments">
+				<div class="user" ng-repeat="user in users | filter:{'id': comment.userId}:true">
+					<img src="{{user.pic}}" width="25" height="25" alt="{{user.username}}">
+					{{user.username}}
+				</div><!-- user -->
+					<p>{{comment.content}}</p>
+				</div><!-- comment -->
+		    </div>
 		</div><!-- user-content -->
-	<div class="post-comment-container" ng-controller="postCommentController">
-		<textarea class="post-comment" placeholder="post a comment" ng-model="commentValue" ng-keypress="outputVal($event)" rows="1"></textarea>
-	</div>
-
 	</div><!-- post -->
 
 	</div><!-- posts -->
